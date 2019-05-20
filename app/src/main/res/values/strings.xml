@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Physical Fitness Test</string>
+    <string name="home">Home</string>
+    <string name="persons">Persons</string>
+</resources>

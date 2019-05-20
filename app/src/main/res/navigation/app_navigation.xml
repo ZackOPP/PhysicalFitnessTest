@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/app_navigation"
+            app:startDestination="@id/test_list_dest">
+
+    <fragment android:id="@+id/test_list_dest"
+              android:name="com.zksolution.physicalfitnesstest.presentation.test.TestListFragment"
+              android:label="@string/home"
+              tools:layout="@layout/fragment_test_list">
+    </fragment>
+
+    <fragment android:id="@+id/person_list_dest"
+              android:name="com.zksolution.physicalfitnesstest.presentation.person.PersonListFragment"
+              android:label="@string/persons"
+              tools:layout="@layout/fragment_person_list">
+    </fragment>
+
+</navigation>

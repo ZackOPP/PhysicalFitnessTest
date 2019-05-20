@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.zksolution.physicalfitnesstest"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+    androidExtensions {
+        experimental = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha05'
+    // Navigation
+    implementation "android.arch.navigation:navigation-fragment-ktx:$rootProject.navigationVersion"
+    implementation "android.arch.navigation:navigation-ui-ktx:$rootProject.navigationVersion"
+    // Dagger 2
+    implementation "com.google.dagger:dagger:$dagger2_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    kapt "com.google.dagger:dagger-compiler:$dagger2_version"
+    compileOnly 'org.glassfish:javax.annotation:3.1.1'
+    // Room components
+    implementation "androidx.room:room-rxjava2:$roomVersion"
+    implementation "androidx.room:room-runtime:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    androidTestImplementation "androidx.room:room-testing:$roomVersion"
+    // Lifecycle components
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0-alpha01'
+    kapt 'androidx.lifecycle:lifecycle-compiler:2.2.0-alpha01'
+    //Rx
+    implementation "io.reactivex.rxjava2:rxjava:2.1.15"
+    implementation "io.reactivex.rxjava2:rxandroid:2.0.2"
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0-beta01'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0-beta01'
+}
