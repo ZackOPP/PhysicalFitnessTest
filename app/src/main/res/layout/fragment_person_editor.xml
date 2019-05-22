@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable
+                name="person"
+                type="com.zksolution.physicalfitnesstest.domain.model.Person"/>
+    </data>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/margin_medium"
+                android:paddingBottom="@dimen/margin_medium">
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_medium"
+                    android:hint="@string/first_name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:maxLines="1"
+                        android:inputType="textCapSentences"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:text="@={person.firstName}"
+                        tools:text="Richard"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_medium"
+                    android:hint="@string/last_name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:maxLines="1"
+                        android:inputType="textCapSentences"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:text="@={person.lastName}"
+                        tools:text="McDonald's"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_medium"
+                    android:hint="@string/id_number">
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:maxLines="1"
+                        android:inputType="number"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:text="@={person.idNumber}"
+                        tools:text="5421365"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--<com.google.android.material.textfield.TextInputLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_margin="@dimen/margin_medium"-->
+                    <!--android:hint="@string/birthday">-->
+
+                <!--<com.google.android.material.textfield.TextInputEditText-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:imeOptions="actionNext"-->
+                        <!--android:maxLines="1"-->
+                        <!--android:inputType="date"-->
+                        <!--android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
+                        <!--android:text="@={person.birthday}"-->
+                        <!--tools:text="5421365"/>-->
+
+            <!--</com.google.android.material.textfield.TextInputLayout>-->
+
+            <!--<com.google.android.material.textfield.TextInputLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_margin="@dimen/margin_medium"-->
+                    <!--android:hint="@string/gender">-->
+
+                <!--<com.google.android.material.textfield.TextInputEditText-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:imeOptions="actionNext"-->
+                        <!--android:maxLines="1"-->
+                        <!--android:inputType="number"-->
+                        <!--android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
+                        <!--android:text="@={person.gender}"-->
+                        <!--tools:text="5421365"/>-->
+
+            <!--</com.google.android.material.textfield.TextInputLayout>-->
+
+            <!--<com.google.android.material.textfield.TextInputLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_margin="@dimen/margin_medium"-->
+                    <!--android:hint="@string/weigth">-->
+
+                <!--<com.google.android.material.textfield.TextInputEditText-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:imeOptions="actionNext"-->
+                        <!--android:maxLines="1"-->
+                        <!--android:inputType="numberDecimal"-->
+                        <!--android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
+                        <!--android:text="@={person.weigth}"-->
+                        <!--tools:text="70.5"/>-->
+
+            <!--</com.google.android.material.textfield.TextInputLayout>-->
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </ScrollView>
+
+</layout>

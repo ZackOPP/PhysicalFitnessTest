@@ -2,7 +2,7 @@ package com.zksolution.physicalfitnesstest.di.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.zksolution.physicalfitnesstest.presentation.person.PersonListViewModel
+import com.zksolution.physicalfitnesstest.presentation.person.PersonViewModel
 import com.zksolution.physicalfitnesstest.presentation.test.TestListViewModel
 import dagger.Binds
 import dagger.Module
@@ -13,8 +13,8 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(PersonListViewModel::class)
-    abstract fun bindPersonListViewModel(personListViewModel: PersonListViewModel): ViewModel
+    @ViewModelKey(PersonViewModel::class)
+    abstract fun bindPersonViewModel(personViewModel: PersonViewModel): ViewModel
 
     @Binds
     @IntoMap

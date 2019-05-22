@@ -7,9 +7,9 @@ import java.util.*
 @Entity(tableName = "persons")
 data class PersonDTO(
     @PrimaryKey(autoGenerate = true) val id: Int,
-    val firstName: String,
-    val lastName: String,
-    val idNumber: String,
+    var firstName: String,
+    var lastName: String,
+    var idNumber: String,
     val birthday: Date,
     val gender: String,
     val weight: Double

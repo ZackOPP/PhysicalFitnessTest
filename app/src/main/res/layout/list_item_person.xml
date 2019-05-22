@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+                name="person"
+                type="com.zksolution.physicalfitnesstest.domain.model.Person" />
+    </data>
+    <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/list_item_person_main_layout"
+            android:padding="@dimen/margin_small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/list_item_person_name"
+                android:layout_margin="@dimen/margin_tiny"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold"
+                android:text="@{person.firstName}"
+                tools:text="Richard McDonald's"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/list_item_person_identifier_number"
+                android:layout_margin="@dimen/margin_tiny"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:text="@{person.idNumber}"
+                tools:text="0123456789"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>
