@@ -1,9 +1,11 @@
-package com.zksolution.physicalfitnesstest.presentation.person
+package com.zksolution.physicalfitnesstest.presentation.personlist
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zksolution.physicalfitnesstest.R
@@ -11,9 +13,9 @@ import com.zksolution.physicalfitnesstest.domain.model.Person
 import com.zksolution.physicalfitnesstest.presentation.common.BaseViewModelFragment
 import kotlinx.android.synthetic.main.fragment_person_list.*
 
-class PersonListFragment : BaseViewModelFragment<PersonViewModel>() {
+class PersonListFragment : BaseViewModelFragment<PersonListViewModel>() {
 
-    override fun getViewModelClass() = PersonViewModel::class.java
+    override fun getViewModelClass() = PersonListViewModel::class.java
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
@@ -22,6 +24,13 @@ class PersonListFragment : BaseViewModelFragment<PersonViewModel>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        configureRecyclerView(view)
+        person_list_fab.setOnClickListener {
+            navigateToPersonEditor()
+        }
+    }
+
+    private fun configureRecyclerView(view: View) {
         val personAdapter = PersonAdapter { person ->
             navigateToPersonEditor(person)
         }
@@ -31,21 +40,13 @@ class PersonListFragment : BaseViewModelFragment<PersonViewModel>() {
             setHasFixedSize(true)
             addItemDecoration(DividerItemDecoration(view.context, LinearLayoutManager.VERTICAL))
         }
-//        disposable.add(viewModel.allPersons()
-//            .subscribeOn(Schedulers.io())
-//            .observeOn(AndroidSchedulers.mainThread())
-//            .subscribe {
-//                personAdapter.setPersons(it)
-//            })
-        person_list_fab.setOnClickListener {
-            //navigateToPersonEditor()
-        }
+        viewModel.persons.observe(viewLifecycleOwner, Observer {
+            personAdapter.setPersons(it)
+        })
     }
 
-    private fun navigateToPersonEditor(person: Person = Person()) {
-        //viewModel.selectedPerson = person
-       // findNavController().navigate(
-            //PersonListFragmentDirections.showPersonEditor()
-       // )
-    }
+    private fun navigateToPersonEditor(person: Person = Person()) =
+        findNavController().navigate(
+            PersonListFragmentDirections.showPersonsEditor(person)
+        )
 }

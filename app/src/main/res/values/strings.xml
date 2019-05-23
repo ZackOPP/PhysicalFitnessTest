@@ -2,11 +2,18 @@
     <string name="app_name">Physical Fitness Test</string>
     <string name="home">Home</string>
     <string name="persons">Persons</string>
-    <string name="weigth">Weigth</string>
+    <string name="weight">Weight</string>
     <string name="gender">Gender</string>
     <string name="birthday">Birthday</string>
     <string name="id_number">ID Number</string>
     <string name="last_name">Last name</string>
     <string name="first_name">First name</string>
     <string name="save">Save</string>
+    <string name="person_editor">Person editor</string>
+    <string name="person_successfully_saved">Person successfully saved</string>
+    <string name="generic_error_try_again">An error occurred. Please try again</string>
+    <string name="pending_fields_error_message">Please complete the required fields</string>
+    <string name="id_number_exists_error_message">The id number already exists in the database</string>
+    <string name="error">Error</string>
+    <string name="ok">OK</string>
 </resources>

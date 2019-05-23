@@ -1,4 +1,4 @@
-package com.zksolution.physicalfitnesstest.presentation.person
+package com.zksolution.physicalfitnesstest.presentation.personlist
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

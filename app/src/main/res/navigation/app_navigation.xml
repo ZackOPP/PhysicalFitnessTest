@@ -12,9 +12,23 @@
     </fragment>
 
     <fragment android:id="@+id/person_list_dest"
-              android:name="com.zksolution.physicalfitnesstest.presentation.person.PersonListFragment"
+              android:name="com.zksolution.physicalfitnesstest.presentation.personlist.PersonListFragment"
               android:label="@string/persons"
               tools:layout="@layout/fragment_person_list">
+
+        <action android:id="@+id/show_persons_editor"
+                app:destination="@id/person_editor_dest"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right"/>
+
+    </fragment>
+    <fragment android:id="@+id/person_editor_dest"
+              android:name="com.zksolution.physicalfitnesstest.presentation.personeditor.PersonEditorFragment"
+              android:label="@string/person_editor"
+              tools:layout="@layout/fragment_person_editor">
+        <argument android:name="person" app:argType="com.zksolution.physicalfitnesstest.domain.model.Person"/>
     </fragment>
 
 </navigation>

@@ -91,7 +91,7 @@
                         <!--android:inputType="date"-->
                         <!--android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
                         <!--android:text="@={person.birthday}"-->
-                        <!--tools:text="5421365"/>-->
+                        <!--tools:text="01/01/1900"/>-->
 
             <!--</com.google.android.material.textfield.TextInputLayout>-->
 
@@ -113,23 +113,23 @@
 
             <!--</com.google.android.material.textfield.TextInputLayout>-->
 
-            <!--<com.google.android.material.textfield.TextInputLayout-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_margin="@dimen/margin_medium"-->
-                    <!--android:hint="@string/weigth">-->
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_medium"
+                    android:hint="@string/weight">
 
-                <!--<com.google.android.material.textfield.TextInputEditText-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:imeOptions="actionNext"-->
-                        <!--android:maxLines="1"-->
-                        <!--android:inputType="numberDecimal"-->
-                        <!--android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
-                        <!--android:text="@={person.weigth}"-->
-                        <!--tools:text="70.5"/>-->
+                <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionDone"
+                        android:maxLines="1"
+                        android:inputType="numberDecimal"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:text="@={person.weight}"
+                        tools:text="70.5" />
 
-            <!--</com.google.android.material.textfield.TextInputLayout>-->
+            </com.google.android.material.textfield.TextInputLayout>
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </ScrollView>

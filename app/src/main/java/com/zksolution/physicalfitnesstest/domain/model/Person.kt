@@ -12,5 +12,5 @@ data class Person(
     var idNumber: String = "",
     var gender: String = "",
     var birthday: Date = Date(),
-    var weigth: Double = 0.0
+    var weight: String = ""
 ) : Parcelable
