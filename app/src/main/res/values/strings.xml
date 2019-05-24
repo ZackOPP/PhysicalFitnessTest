@@ -16,4 +16,6 @@
     <string name="id_number_exists_error_message">The id number already exists in the database</string>
     <string name="error">Error</string>
     <string name="ok">OK</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
 </resources>

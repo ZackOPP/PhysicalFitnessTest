@@ -4,6 +4,7 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.zksolution.physicalfitnesstest.data.db.converter.DateConverter
+import com.zksolution.physicalfitnesstest.data.db.converter.GenderConverter
 import com.zksolution.physicalfitnesstest.data.db.dao.*
 import com.zksolution.physicalfitnesstest.data.dto.*
 
@@ -18,7 +19,10 @@ import com.zksolution.physicalfitnesstest.data.dto.*
         ExerciseDTO::class
     ]
 )
-@TypeConverters(DateConverter::class)
+@TypeConverters(
+    DateConverter::class,
+    GenderConverter::class
+)
 abstract class AppDb : RoomDatabase() {
     abstract fun personDao(): PersonDao
     abstract fun testDao(): TestDao

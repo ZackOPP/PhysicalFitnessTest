@@ -10,7 +10,7 @@ data class Person(
     var firstName: String = "",
     var lastName: String = "",
     var idNumber: String = "",
-    var gender: String = "",
-    var birthday: Date = Date(),
+    var gender: Gender = Gender.NONE,
+    var birthday: Date? = null,
     var weight: String = ""
 ) : Parcelable

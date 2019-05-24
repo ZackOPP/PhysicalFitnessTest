@@ -2,10 +2,12 @@ package com.zksolution.physicalfitnesstest.presentation.personeditor
 
 import android.database.sqlite.SQLiteConstraintException
 import android.util.Log
+import android.widget.RadioGroup
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.zksolution.physicalfitnesstest.R
 import com.zksolution.physicalfitnesstest.domain.exception.PendingFieldsException
+import com.zksolution.physicalfitnesstest.domain.model.Gender
 import com.zksolution.physicalfitnesstest.domain.model.Person
 import com.zksolution.physicalfitnesstest.domain.usecase.SavePersonUseCase
 import com.zksolution.physicalfitnesstest.presentation.common.RxViewModel
@@ -30,6 +32,21 @@ class PersonEditorViewModel @Inject constructor(
     private val _errorMessage: MutableLiveData<Int> = MutableLiveData()
     val errorMessage: LiveData<Int>
         get() = _errorMessage
+
+    fun onGenderCheckedChanged(group: RadioGroup, id: Int) {
+        person.gender = when (id) {
+            R.id.person_editor_female_rb -> Gender.FEMALE
+            R.id.person_editor_male_rb -> Gender.MALE
+            else -> Gender.NONE
+        }
+    }
+
+    fun getInitialSelectedGender() =
+            when (person.gender) {
+                Gender.FEMALE -> R.id.person_editor_female_rb
+                Gender.MALE -> R.id.person_editor_male_rb
+                Gender.NONE -> null
+            }
 
     fun trySavePerson() =
         addDisposable(savePersonUseCase.execute(person)

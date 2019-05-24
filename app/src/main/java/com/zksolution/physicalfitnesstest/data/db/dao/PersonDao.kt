@@ -1,9 +1,6 @@
 package com.zksolution.physicalfitnesstest.data.db.dao
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.zksolution.physicalfitnesstest.data.dto.PersonDTO
 import io.reactivex.Completable
 import io.reactivex.Flowable
@@ -12,8 +9,11 @@ import io.reactivex.Single
 @Dao
 interface PersonDao {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert
     fun insert(person: PersonDTO): Completable
+
+    @Update
+    fun update(person: PersonDTO): Completable
 
     @Query("SELECT * FROM persons")
     fun getAll(): Flowable<List<PersonDTO>>

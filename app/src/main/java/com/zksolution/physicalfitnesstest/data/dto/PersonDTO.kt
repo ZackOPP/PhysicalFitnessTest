@@ -1,18 +1,27 @@
 package com.zksolution.physicalfitnesstest.data.dto
 
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
+import com.zksolution.physicalfitnesstest.domain.model.Gender
 import com.zksolution.physicalfitnesstest.domain.model.Person
 import java.util.*
 
-@Entity(tableName = "persons")
+@Entity(tableName = "persons",
+    indices = [
+        Index(
+            value = ["idNumber"],
+            unique = true
+        )
+    ]
+)
 data class PersonDTO(
     @PrimaryKey(autoGenerate = true) val id: Int,
     val firstName: String,
     val lastName: String,
     val idNumber: String,
-    val gender: String,
-    val birthday: Date,
+    val gender: Gender,
+    val birthday: Date?,
     val weight: String
 )
 
