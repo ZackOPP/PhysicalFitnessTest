@@ -15,7 +15,7 @@ object GenderFactory {
         }
     }
 
-    fun invert(gender: Gender): String {
+    fun getInverted(gender: Gender): String {
         return when (gender) {
             Gender.MALE -> MALE
             Gender.FEMALE -> FEMALE

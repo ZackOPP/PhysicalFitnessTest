@@ -4,11 +4,15 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.zksolution.physicalfitnesstest.presentation.personeditor.PersonEditorViewModel
 import com.zksolution.physicalfitnesstest.presentation.personlist.PersonListViewModel
-import com.zksolution.physicalfitnesstest.presentation.test.TestListViewModel
+import com.zksolution.physicalfitnesstest.presentation.testdetail.TestDetailViewModel
+import com.zksolution.physicalfitnesstest.presentation.testlist.TestListViewModel
+import com.zksolution.physicalfitnesstest.presentation.testpersondetail.TestPersonDetailViewModel
+import com.zksolution.physicalfitnesstest.presentation.testpersonjogging.TestPersonJoggingViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
 
+@Suppress("unused")
 @Module
 abstract class ViewModelModule {
 
@@ -26,6 +30,21 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(TestListViewModel::class)
     abstract fun bindTestListViewModel(testListViewModel: TestListViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(TestDetailViewModel::class)
+    abstract fun bindTestDetailViewModel(testDetailViewModel: TestDetailViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(TestPersonJoggingViewModel::class)
+    abstract fun bindTestPersonJoggingViewModelClass(testPersonJoggingViewModel: TestPersonJoggingViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(TestPersonDetailViewModel::class)
+    abstract fun bindTestPersonDetailViewModel(testPersonDetailViewModel: TestPersonDetailViewModel): ViewModel
 
     @Binds
     abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory

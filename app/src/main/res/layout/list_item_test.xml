@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.zksolution.physicalfitnesstest.presentation.common.BindingDateConverter"/>
+        <variable name="test" type="com.zksolution.physicalfitnesstest.domain.model.Test"/>
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_small"
+            android:background="?android:attr/selectableItemBackground"
+            app:cardElevation="@dimen/card_elevation">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small" >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/list_item_test_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/margin_small"
+                    android:textStyle="bold"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:text="@{BindingDateConverter.dateToString(test.date)}"
+                    tools:text="Title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/list_item_test_persons_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/margin_small"
+                    android:paddingEnd="@dimen/margin_small"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:text="@string/persons"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/list_item_test_title" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/list_item_test_persons_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/margin_small"
+                    android:paddingEnd="@dimen/margin_small"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:text="@{test.numberOfPersons}"
+                    tools:text="2019-01-01"
+                    app:layout_constraintStart_toEndOf="@id/list_item_test_persons_label"
+                    app:layout_constraintBaseline_toBaselineOf="@id/list_item_test_persons_label"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

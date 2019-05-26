@@ -12,5 +12,5 @@ object GenderConverter {
 
     @TypeConverter
     @JvmStatic
-    fun toString(value: Gender) = GenderFactory.invert(value)
+    fun toString(value: Gender) = GenderFactory.getInverted(value)
 }

@@ -14,3 +14,5 @@ data class Person(
     var birthday: Date? = null,
     var weight: String = ""
 ) : Parcelable
+
+fun Person.isStored() = id != 0

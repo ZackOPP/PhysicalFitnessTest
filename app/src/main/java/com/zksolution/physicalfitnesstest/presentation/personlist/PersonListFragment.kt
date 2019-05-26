@@ -41,7 +41,7 @@ class PersonListFragment : BaseViewModelFragment<PersonListViewModel>() {
             addItemDecoration(DividerItemDecoration(view.context, LinearLayoutManager.VERTICAL))
         }
         viewModel.persons.observe(viewLifecycleOwner, Observer {
-            personAdapter.setPersons(it)
+            personAdapter.setItems(it)
         })
     }
 

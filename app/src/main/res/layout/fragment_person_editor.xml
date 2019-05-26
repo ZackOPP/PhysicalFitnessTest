@@ -4,7 +4,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
     <data>
-        <import type="com.zksolution.physicalfitnesstest.presentation.common.BindingConverter"/>
+        <import type="com.zksolution.physicalfitnesstest.presentation.common.BindingDateConverter"/>
 
         <variable name="viewModel"
                   type="com.zksolution.physicalfitnesstest.presentation.personeditor.PersonEditorViewModel"/>
@@ -155,7 +155,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_medium"
-                        android:text="@={BindingConverter.dateToString(viewModel.person.birthday)}"
+                        android:text="@={BindingDateConverter.dateToString(viewModel.person.birthday)}"
                         tools:text="01/01/1900"/>
 
             </androidx.appcompat.widget.LinearLayoutCompat>

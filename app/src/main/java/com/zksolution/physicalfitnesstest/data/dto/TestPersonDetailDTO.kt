@@ -8,7 +8,7 @@ data class TestPersonDetailDTO(
     @PrimaryKey(autoGenerate = true) val id: Int,
     val testPersonId: Int,
     val exerciseName: String,
-    val minutes: Double,
-    val repetitions: Int,
-    val repByMin: Double
+    val minutes: String,
+    val repetitions: String,
+    val repByMin: String
 )

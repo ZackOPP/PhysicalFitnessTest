@@ -1,6 +1,9 @@
 package com.zksolution.physicalfitnesstest.data.db.dao
 
-import androidx.room.*
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.Query
+import androidx.room.Update
 import com.zksolution.physicalfitnesstest.data.dto.PersonDTO
 import io.reactivex.Completable
 import io.reactivex.Flowable

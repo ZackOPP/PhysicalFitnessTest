@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 data class TestPersonJoggingDTO(
     @PrimaryKey(autoGenerate = true) val id: Int,
     val testPersonId: Int,
-    val fieldDistance: Double,
-    val laps: Int,
-    val totalDistance: Double
+    val fieldDistance: String,
+    val laps: String,
+    val totalDistance: String
 )

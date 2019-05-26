@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/form_navigation" app:startDestination="@id/jogging_dest">
+
+    <fragment android:id="@+id/jogging_dest"
+              android:name="com.zksolution.physicalfitnesstest.presentation.testpersonjogging.TestPersonJoggingFragment"
+              android:label="TestPersonJoggingFragment"
+              tools:layout="@layout/fragment_jogging_form">
+        <action android:id="@+id/action_jogging_dest_to_exercise_dest" app:destination="@id/exercise_dest"/>
+    </fragment>
+
+    <fragment android:id="@+id/exercise_dest"
+              android:name="com.zksolution.physicalfitnesstest.presentation.testpersondetail.TestPersonDetailFragment"
+              android:label="TestPersonDetailFragment"
+              tools:layout="@layout/fragment_exercise_form">
+        <action android:id="@+id/action_exercise_dest_self" app:destination="@id/exercise_dest"/>
+        <action android:id="@+id/action_exercise_dest_to_testResultFragment" app:destination="@id/test_result_dest"/>
+    </fragment>
+    <fragment android:id="@+id/test_result_dest"
+              android:name="com.zksolution.physicalfitnesstest.presentation.testresult.TestResultFragment"
+              android:label="TestResultFragment"
+              tools:layout="@layout/fragment_test_result"/>
+</navigation>

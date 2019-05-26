@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable name="testPersonDetail" type="com.zksolution.physicalfitnesstest.domain.model.TestPersonDetail"/>
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+                                                  android:orientation="vertical"
+                                                  android:layout_width="match_parent"
+                                                  android:layout_height="match_parent">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{testPersonDetail.exerciseName}"
+                android:layout_margin="@dimen/margin_huge"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                tools:text="Abs"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_medium"
+                android:hint="@string/minutes">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:maxLines="1"
+                    android:inputType="numberDecimal"
+                    android:text="@={testPersonDetail.minutes}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    tools:text="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_medium"
+                android:hint="@string/repetitions">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:maxLines="1"
+                    android:inputType="number"
+                    android:text="@={testPersonDetail.repetitions}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    tools:text="40" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_medium"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textStyle="bold"
+                android:text="@string/repetitions_per_minute"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_medium"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:text="@={testPersonDetail.repByMin}"
+                tools:text="40"/>
+
+        <include layout="@layout/view_button_next_question"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

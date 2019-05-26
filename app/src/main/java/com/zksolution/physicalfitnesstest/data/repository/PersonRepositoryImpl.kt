@@ -4,6 +4,7 @@ import com.zksolution.physicalfitnesstest.data.db.dao.PersonDao
 import com.zksolution.physicalfitnesstest.data.dto.toDomain
 import com.zksolution.physicalfitnesstest.data.dto.toDto
 import com.zksolution.physicalfitnesstest.domain.model.Person
+import com.zksolution.physicalfitnesstest.domain.model.isStored
 import com.zksolution.physicalfitnesstest.domain.repository.PersonRepository
 import io.reactivex.Completable
 import io.reactivex.Flowable
@@ -25,7 +26,7 @@ class PersonRepositoryImpl(
 
     override fun save(person: Person): Completable {
         val p = person.toDto()
-        return if (p.id == 0)
+        return if (!person.isStored())
             personDao.insert(p)
         else
             personDao.update(p)

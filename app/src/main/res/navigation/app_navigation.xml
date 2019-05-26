@@ -6,9 +6,17 @@
             app:startDestination="@id/test_list_dest">
 
     <fragment android:id="@+id/test_list_dest"
-              android:name="com.zksolution.physicalfitnesstest.presentation.test.TestListFragment"
+              android:name="com.zksolution.physicalfitnesstest.presentation.testlist.TestListFragment"
               android:label="@string/home"
               tools:layout="@layout/fragment_test_list">
+
+        <action android:id="@+id/show_test_editor"
+                app:destination="@id/test_detail_dest"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right"/>
+
     </fragment>
 
     <fragment android:id="@+id/person_list_dest"
@@ -29,6 +37,14 @@
               android:label="@string/person_editor"
               tools:layout="@layout/fragment_person_editor">
         <argument android:name="person" app:argType="com.zksolution.physicalfitnesstest.domain.model.Person"/>
+    </fragment>
+
+    <fragment android:id="@+id/test_detail_dest"
+              android:name="com.zksolution.physicalfitnesstest.presentation.testdetail.TestDetailFragment"
+              android:label="@string/test"
+              tools:layout="@layout/fragment_test_detail" >
+
+        <argument android:name="test" app:argType="com.zksolution.physicalfitnesstest.domain.model.Test"/>
     </fragment>
 
 </navigation>
