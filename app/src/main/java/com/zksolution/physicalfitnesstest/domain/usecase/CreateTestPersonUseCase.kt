@@ -10,5 +10,10 @@ class CreateTestPersonUseCase @Inject constructor(
     private val testPersonRepository: TestPersonRepository
 ) : UseCase<Completable, TestPerson>() {
 
-    override fun execute(p: TestPerson) = testPersonRepository.insertToCache(p)
+    override fun execute(p: TestPerson): Completable =
+        testPersonRepository.insertToCache(p).flatMapCompletable {
+            Completable.fromAction {
+                p.id = it.toInt()
+            }
+        }
 }

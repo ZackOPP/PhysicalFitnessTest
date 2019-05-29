@@ -45,6 +45,15 @@
               tools:layout="@layout/fragment_test_detail" >
 
         <argument android:name="test" app:argType="com.zksolution.physicalfitnesstest.domain.model.Test"/>
+        <action android:id="@+id/show_form" app:destination="@id/formActivity"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
+
+    <activity android:id="@+id/formActivity"
+              android:name="com.zksolution.physicalfitnesstest.presentation.form.FormActivity"
+              android:label="form_activity" tools:layout="@layout/form_activity"/>
 
 </navigation>

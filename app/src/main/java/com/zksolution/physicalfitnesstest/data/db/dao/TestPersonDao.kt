@@ -5,8 +5,8 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.zksolution.physicalfitnesstest.data.dto.TestPersonDTO
-import io.reactivex.Completable
 import io.reactivex.Flowable
+import io.reactivex.Single
 
 @Dao
 interface TestPersonDao {
@@ -15,5 +15,5 @@ interface TestPersonDao {
     fun getByTestId(testId: Int): Flowable<List<TestPersonDTO>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(testPersonDTO: TestPersonDTO): Completable
+    fun insert(testPersonDTO: TestPersonDTO): Single<Long>
 }

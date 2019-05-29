@@ -8,27 +8,19 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
+                  <entry key="formActivity">
+                    <value>
+                      <LayoutPositions />
+                    </value>
+                  </entry>
                   <entry key="person_editor_dest">
                     <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="246" />
-                            <option name="y" value="-99" />
-                          </Point>
-                        </option>
-                      </LayoutPositions>
+                      <LayoutPositions />
                     </value>
                   </entry>
                   <entry key="person_list_dest">
                     <value>
                       <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="33" />
-                            <option name="y" value="-448" />
-                          </Point>
-                        </option>
                         <option name="myPositions">
                           <map>
                             <entry key="show_persons_editor">
@@ -44,11 +36,14 @@
                   <entry key="test_detail_dest">
                     <value>
                       <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="-185" />
-                            <option name="y" value="-74" />
-                          </Point>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_test_detail_dest_to_formActivity">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
                         </option>
                       </LayoutPositions>
                     </value>
@@ -56,12 +51,6 @@
                   <entry key="test_list_dest">
                     <value>
                       <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="-382" />
-                            <option name="y" value="-398" />
-                          </Point>
-                        </option>
                         <option name="myPositions">
                           <map>
                             <entry key="show_test_editor">

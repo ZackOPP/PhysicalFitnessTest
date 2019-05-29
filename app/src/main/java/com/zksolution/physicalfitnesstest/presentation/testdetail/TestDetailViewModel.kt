@@ -30,7 +30,7 @@ class TestDetailViewModel @Inject constructor(
     val testPersonList: LiveData<List<TestPerson>>
         get() = _testPersonList
 
-    val personAddedSuccessfully: MutableLiveData<Boolean> = MutableLiveData()
+    val addedTestPerson: MutableLiveData<TestPerson> = MutableLiveData()
 
     fun loadTestData(t: Test) {
         if (!::test.isInitialized) {
@@ -42,12 +42,13 @@ class TestDetailViewModel @Inject constructor(
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe({
-                        test.id = it.toInt()
                         loadTestPersonListByTestId()
                     }, {
                         Log.e(TAG, "loadTestData() test -> $t", it)
                     })
             )
+        } else {
+            loadTestPersonListByTestId()
         }
     }
 
@@ -66,16 +67,22 @@ class TestDetailViewModel @Inject constructor(
                 })
         )
 
-    private fun addPerson(person: Person) =
+    private fun addPerson(person: Person) {
+        val testPerson = createTestPerson(person)
         addDisposable(
-            createTestPersonUseCase.execute(TestPerson(0, test.id, person.id))
+            createTestPersonUseCase.execute(testPerson)
+                .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
-                    personAddedSuccessfully.value = true
+                    addedTestPerson.value = testPerson
                 }, {
+                    // TODO ( Display error message )
                     Log.e(TAG, "addPerson() person -> $person", it)
                 })
         )
+    }
+
+    private fun createTestPerson(person: Person) = TestPerson(0, test.id, person.id, test, person)
 
     private fun loadTestPersonListByTestId() {
         if (testPersonList.value == null) {
@@ -85,6 +92,7 @@ class TestDetailViewModel @Inject constructor(
                     .subscribe({
                         _testPersonList.value = it
                     }, {
+                        // TODO ( Display error message )
                         Log.e(TAG, "loadTestPersonList()", it)
                     })
             )

@@ -50,7 +50,7 @@
                     android:paddingStart="@dimen/margin_small"
                     android:paddingEnd="@dimen/margin_small"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:text="@{test.numberOfPersons}"
+                    android:text="@{String.valueOf(test.numberOfPersons)}"
                     tools:text="2019-01-01"
                     app:layout_constraintStart_toEndOf="@id/list_item_test_persons_label"
                     app:layout_constraintBaseline_toBaselineOf="@id/list_item_test_persons_label"/>

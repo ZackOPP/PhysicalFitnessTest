@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.textfield.TextInputEditText
 import com.zksolution.physicalfitnesstest.R
@@ -29,12 +30,12 @@ class TestDetailFragment : BaseViewModelFragment<TestDetailViewModel>() {
         test_detail_fab.setOnClickListener {
             displayAddPersonAlertDialog()
         }
-        viewModel.personAddedSuccessfully.observe(viewLifecycleOwner, Observer {
-            if (it) {
-//                findNavController().navigate(
-//
-//                )
-                viewModel.personAddedSuccessfully.value = false
+        viewModel.addedTestPerson.observe(viewLifecycleOwner, Observer {
+            if (it != null){
+                viewModel.addedTestPerson.value = null
+                findNavController().navigate(
+                    TestDetailFragmentDirections.showForm()
+                )
             }
         })
     }
@@ -63,7 +64,7 @@ class TestDetailFragment : BaseViewModelFragment<TestDetailViewModel>() {
                     input?.text?.let { inputValue ->
                         viewModel.addPersonById(inputValue.toString())
                     }
-                }
+                }.show()
         }
     }
 }
