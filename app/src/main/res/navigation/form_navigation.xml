@@ -8,6 +8,7 @@
               android:label="TestPersonJoggingFragment"
               tools:layout="@layout/fragment_jogging_form">
         <action android:id="@+id/next_exercise_dest" app:destination="@id/exercise_dest"/>
+        <argument android:name="testPerson" app:argType="com.zksolution.physicalfitnesstest.domain.model.TestPerson"/>
     </fragment>
 
     <fragment android:id="@+id/exercise_dest"
@@ -16,9 +17,12 @@
               tools:layout="@layout/fragment_exercise_form">
         <action android:id="@+id/next_exercise_dest" app:destination="@id/exercise_dest"/>
         <action android:id="@+id/finish_dest" app:destination="@id/test_result_dest"/>
+        <argument android:name="exercise" app:argType="com.zksolution.physicalfitnesstest.domain.model.Exercise"/>
+        <argument android:name="testPerson" app:argType="com.zksolution.physicalfitnesstest.domain.model.TestPerson"/>
     </fragment>
     <fragment android:id="@+id/test_result_dest"
               android:name="com.zksolution.physicalfitnesstest.presentation.testresult.TestResultFragment"
               android:label="TestResultFragment"
-              tools:layout="@layout/fragment_test_result"/>
+              tools:layout="@layout/fragment_test_result">
+    </fragment>
 </navigation>

@@ -1,14 +1,8 @@
 package com.zksolution.physicalfitnesstest.di
 
-import com.zksolution.physicalfitnesstest.data.db.dao.PersonDao
-import com.zksolution.physicalfitnesstest.data.db.dao.TestDao
-import com.zksolution.physicalfitnesstest.data.db.dao.TestPersonDao
-import com.zksolution.physicalfitnesstest.data.repository.PersonRepositoryImpl
-import com.zksolution.physicalfitnesstest.data.repository.TestPersonRepositoryImpl
-import com.zksolution.physicalfitnesstest.data.repository.TestRepositoryImpl
-import com.zksolution.physicalfitnesstest.domain.repository.PersonRepository
-import com.zksolution.physicalfitnesstest.domain.repository.TestPersonRepository
-import com.zksolution.physicalfitnesstest.domain.repository.TestRepository
+import com.zksolution.physicalfitnesstest.data.db.dao.*
+import com.zksolution.physicalfitnesstest.data.repository.*
+import com.zksolution.physicalfitnesstest.domain.repository.*
 import dagger.Module
 import dagger.Provides
 import dagger.Reusable
@@ -28,4 +22,17 @@ class RepositoryModule {
     @Reusable
     fun provideTestPersonRepository(testPersonDao: TestPersonDao): TestPersonRepository = TestPersonRepositoryImpl(testPersonDao)
 
+    @Provides
+    @Reusable
+    fun provideTestPersonDetailRepository(testPersonDetailDao: TestPersonDetailDao): TestPersonDetailRepository =
+            TestPersonDetailRepositoryImpl(testPersonDetailDao)
+
+    @Provides
+    @Reusable
+    fun provideExerciseRepository(): ExerciseRepository = ExerciseRepositoryImpl()
+
+    @Provides
+    @Reusable
+    fun provideTestPersonJoggingRepository(testPersonJoggingDao: TestPersonJoggingDao): TestPersonJoggingRepository =
+            TestPersonJoggingRepositoryImpl(testPersonJoggingDao)
 }

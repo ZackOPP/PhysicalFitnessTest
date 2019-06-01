@@ -8,19 +8,39 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
-                  <entry key="formActivity">
+                  <entry key="form_navigation">
                     <value>
-                      <LayoutPositions />
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="555" />
+                            <option name="y" value="475" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
                     </value>
                   </entry>
                   <entry key="person_editor_dest">
                     <value>
-                      <LayoutPositions />
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="256" />
+                            <option name="y" value="12" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
                     </value>
                   </entry>
                   <entry key="person_list_dest">
                     <value>
                       <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
+                          </Point>
+                        </option>
                         <option name="myPositions">
                           <map>
                             <entry key="show_persons_editor">
@@ -36,9 +56,15 @@
                   <entry key="test_detail_dest">
                     <value>
                       <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="256" />
+                            <option name="y" value="368" />
+                          </Point>
+                        </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_test_detail_dest_to_formActivity">
+                            <entry key="show_form">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -51,6 +77,12 @@
                   <entry key="test_list_dest">
                     <value>
                       <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="12" />
+                            <option name="y" value="368" />
+                          </Point>
+                        </option>
                         <option name="myPositions">
                           <map>
                             <entry key="show_test_editor">
@@ -78,18 +110,18 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-491" />
-                            <option name="y" value="-736" />
+                            <option name="x" value="256" />
+                            <option name="y" value="54" />
                           </Point>
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_exercise_dest_self">
+                            <entry key="finish_dest">
                               <value>
                                 <LayoutPositions />
                               </value>
                             </entry>
-                            <entry key="action_exercise_dest_to_testResultFragment">
+                            <entry key="next_exercise_dest">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -104,13 +136,13 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-821" />
-                            <option name="y" value="-736" />
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
                           </Point>
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_jogging_dest_to_exercise_dest">
+                            <entry key="next_exercise_dest">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -125,8 +157,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-211" />
-                            <option name="y" value="-901" />
+                            <option name="x" value="500" />
+                            <option name="y" value="12" />
                           </Point>
                         </option>
                       </LayoutPositions>

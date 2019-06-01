@@ -9,6 +9,8 @@
             android:layout_width="@dimen/progress_bar_size"
             android:layout_height="@dimen/progress_bar_size"
             android:layout_gravity="center"
+            android:max="100"
+            android:progress="75"
             android:indeterminate="false"/>
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -18,5 +20,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@color/colorDarkGray"
             tools:text="25%"/>
+
+    <include layout="@layout/view_button_next_question"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

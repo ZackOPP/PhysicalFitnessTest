@@ -34,7 +34,7 @@ class TestDetailFragment : BaseViewModelFragment<TestDetailViewModel>() {
             if (it != null){
                 viewModel.addedTestPerson.value = null
                 findNavController().navigate(
-                    TestDetailFragmentDirections.showForm()
+                    TestDetailFragmentDirections.showForm(it)
                 )
             }
         })
