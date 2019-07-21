@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+<data>
+
+
+</data>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                                      xmlns:tools="http://schemas.android.com/tools"
-                                                     android:orientation="vertical"
                                                      android:layout_width="match_parent"
                                                      android:layout_height="match_parent">
 
     <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:id="@+id/test_result_progress_bar"
+            android:progressDrawable="@drawable/progress_circular"
             android:layout_width="@dimen/progress_bar_size"
             android:layout_height="@dimen/progress_bar_size"
             android:layout_gravity="center"
             android:max="100"
-            android:progress="75"
+            tools:progress="90"
             android:indeterminate="false"/>
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -19,8 +26,16 @@
             android:layout_gravity="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@color/colorDarkGray"
-            tools:text="25%"/>
+            tools:text="90%"/>
 
-    <include layout="@layout/view_button_next_question"/>
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_gravity="center|bottom">
+
+        <include layout="@layout/view_button_next_question" />
+
+    </FrameLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

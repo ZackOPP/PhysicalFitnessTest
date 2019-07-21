@@ -3,9 +3,7 @@
 
     <data>
 
-        <variable name="exercise" type="com.zksolution.physicalfitnesstest.domain.model.Exercise"/>
-        <variable name="testPersonJogging" type="com.zksolution.physicalfitnesstest.domain.model.TestPersonJogging"/>
-
+        <variable name="viewModel" type="com.zksolution.physicalfitnesstest.presentation.testpersonjogging.TestPersonJoggingViewModel"/>
     </data>
 
     <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
@@ -17,11 +15,11 @@
         <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{exercise.name}"
+                android:text="@string/jogging"
                 android:layout_margin="@dimen/margin_huge"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                tools:text="Jogging Test"/>
+                tools:text="Jogging"/>
 
         <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -36,7 +34,8 @@
                     android:maxLines="1"
                     android:inputType="numberDecimal"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:text="@={testPersonJogging.fieldDistance}"
+                    android:text="@={viewModel.testPersonJogging.fieldDistance}"
+                    android:afterTextChanged="@{() -> viewModel.onJoggingDetailsChanged()}"
                     tools:text="70.5" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -53,7 +52,8 @@
                     android:imeOptions="actionDone"
                     android:maxLines="1"
                     android:inputType="number"
-                    android:text="@={testPersonJogging.laps}"
+                    android:text="@={viewModel.testPersonJogging.laps}"
+                    android:afterTextChanged="@{() -> viewModel.onJoggingDetailsChanged()}"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     tools:text="20" />
 
@@ -73,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_medium"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                android:text="@={testPersonJogging.totalDistance}"
+                android:text="@{viewModel.totalDistance}"
                 tools:text="26.24 m"/>
 
         <include layout="@layout/view_button_next_question"/>

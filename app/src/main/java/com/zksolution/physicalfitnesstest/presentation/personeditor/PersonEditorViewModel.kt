@@ -33,7 +33,7 @@ class PersonEditorViewModel @Inject constructor(
     val errorMessage: LiveData<Int>
         get() = _errorMessage
 
-    fun onGenderCheckedChanged(group: RadioGroup, id: Int) {
+    fun onGenderCheckedChanged(id: Int) {
         person.gender = when (id) {
             R.id.person_editor_female_rb -> Gender.FEMALE
             R.id.person_editor_male_rb -> Gender.MALE

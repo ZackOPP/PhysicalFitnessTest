@@ -27,4 +27,6 @@
     <string name="minutes">Minutes</string>
     <string name="repetitions">Repetitions</string>
     <string name="repetitions_per_minute">Rep/min</string>
+    <string name="jogging">Jogging</string>
+    <string name="result">Result</string>
 </resources>

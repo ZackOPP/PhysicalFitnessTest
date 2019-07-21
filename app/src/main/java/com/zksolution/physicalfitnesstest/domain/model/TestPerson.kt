@@ -9,5 +9,6 @@ data class TestPerson(
     val testId: Int,
     val personId: Int,
     val test: Test? = null,
-    val person: Person? = null
+    val person: Person? = null,
+    var result: Int = 0
 ) : Parcelable

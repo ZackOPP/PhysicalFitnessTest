@@ -8,13 +8,14 @@ import com.zksolution.physicalfitnesstest.domain.model.TestPerson
 data class TestPersonDTO(
     @PrimaryKey(autoGenerate = true) val id: Int,
     val testId: Int,
-    val personId: Int
+    val personId: Int,
+    val result: Int
 )
 
 fun List<TestPersonDTO>.toDomain() = this.map { it.toDomain() }
 
-fun TestPersonDTO.toDomain() = TestPerson(this.id, this.testId, this.personId)
+fun TestPersonDTO.toDomain() = TestPerson(this.id, this.testId, this.personId, result = this.result)
 
 fun List<TestPerson>.toDto() = this.map { it.toDto() }
 
-fun TestPerson.toDto() = TestPersonDTO(this.id, this.testId, this.personId)
+fun TestPerson.toDto() = TestPersonDTO(this.id, this.testId, this.personId, this.result)

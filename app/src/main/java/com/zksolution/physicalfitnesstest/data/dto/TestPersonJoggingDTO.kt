@@ -9,22 +9,19 @@ data class TestPersonJoggingDTO(
     @PrimaryKey(autoGenerate = true) val id: Int,
     val testPersonId: Int,
     val fieldDistance: String,
-    val laps: String,
-    val totalDistance: String
+    val laps: String
 )
 
 fun TestPersonJoggingDTO.toDomain() = TestPersonJogging(
     this.id,
     this.testPersonId,
     this.fieldDistance,
-    this.laps,
-    this.totalDistance
+    this.laps
 )
 
 fun TestPersonJogging.toDto() = TestPersonJoggingDTO(
     this.id,
     this.testPersonId,
     this.fieldDistance,
-    this.laps,
-    this.totalDistance
+    this.laps
 )

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/form_navigation" app:startDestination="@id/jogging_dest">
+            android:id="@+id/form_navigation" app:startDestination="@id/jogging_dest" tools:ignore="UnusedNavigation">
 
     <fragment android:id="@+id/jogging_dest"
               android:name="com.zksolution.physicalfitnesstest.presentation.testpersonjogging.TestPersonJoggingFragment"
-              android:label="TestPersonJoggingFragment"
+              android:label="@string/jogging"
               tools:layout="@layout/fragment_jogging_form">
         <action android:id="@+id/next_exercise_dest" app:destination="@id/exercise_dest"/>
         <argument android:name="testPerson" app:argType="com.zksolution.physicalfitnesstest.domain.model.TestPerson"/>
@@ -22,7 +22,7 @@
     </fragment>
     <fragment android:id="@+id/test_result_dest"
               android:name="com.zksolution.physicalfitnesstest.presentation.testresult.TestResultFragment"
-              android:label="TestResultFragment"
+              android:label="@string/result"
               tools:layout="@layout/fragment_test_result">
     </fragment>
 </navigation>

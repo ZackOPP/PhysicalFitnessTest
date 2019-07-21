@@ -21,6 +21,7 @@ class TestPersonJoggingFragment : BaseViewModelFragment<TestPersonJoggingViewMod
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_jogging_form, container, false)
+        binding.lifecycleOwner = viewLifecycleOwner
         return binding.root
     }
 
@@ -28,7 +29,7 @@ class TestPersonJoggingFragment : BaseViewModelFragment<TestPersonJoggingViewMod
         super.onViewCreated(view, savedInstanceState)
         val safeArgs =  TestPersonJoggingFragmentArgs.fromBundle(arguments!!)
         viewModel.loadTestData(safeArgs.testPerson)
-        binding.testPersonJogging = viewModel.testPersonJogging
+        binding.viewModel = viewModel
         view_button_next_question_btn.setOnClickListener {
             viewModel.save()
             findNavController().navigate(

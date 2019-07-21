@@ -13,8 +13,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="555" />
-                            <option name="y" value="475" />
+                            <option name="x" value="500" />
+                            <option name="y" value="477" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -108,12 +108,6 @@
                   <entry key="exercise_dest">
                     <value>
                       <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="256" />
-                            <option name="y" value="54" />
-                          </Point>
-                        </option>
                         <option name="myPositions">
                           <map>
                             <entry key="finish_dest">
@@ -134,12 +128,6 @@
                   <entry key="jogging_dest">
                     <value>
                       <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="12" />
-                            <option name="y" value="12" />
-                          </Point>
-                        </option>
                         <option name="myPositions">
                           <map>
                             <entry key="next_exercise_dest">
@@ -154,14 +142,7 @@
                   </entry>
                   <entry key="test_result_dest">
                     <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="500" />
-                            <option name="y" value="12" />
-                          </Point>
-                        </option>
-                      </LayoutPositions>
+                      <LayoutPositions />
                     </value>
                   </entry>
                 </map>
