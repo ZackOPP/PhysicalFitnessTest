@@ -5,6 +5,5 @@ data class TestPersonDetail(
     val testPersonId: Int,
     var exerciseName: String,
     var minutes: String = "",
-    var repetitions: String = "",
-    var repByMin: String = ""
+    var repetitions: String = ""
 )

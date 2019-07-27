@@ -10,5 +10,5 @@ data class TestPerson(
     val personId: Int,
     val test: Test? = null,
     val person: Person? = null,
-    var result: Int = 0
+    var result: Double = 0.toDouble()
 ) : Parcelable

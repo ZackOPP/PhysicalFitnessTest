@@ -17,4 +17,6 @@ class TestPersonRepositoryImpl (
         }
 
     override fun insertToCache(testPerson: TestPerson) = testPersonDao.insert(testPerson.toDto())
+
+    override fun updateInCache(testPerson: TestPerson) = testPersonDao.update(testPerson.toDto())
 }

@@ -10,17 +10,17 @@ data class TestPersonDetailDTO(
     val testPersonId: Int,
     val exerciseName: String,
     val minutes: String,
-    val repetitions: String,
-    val repByMin: String
+    val repetitions: String
 )
+
+fun List<TestPersonDetailDTO>.toDomain() = this.map { it.toDomain() }
 
 fun TestPersonDetailDTO.toDomain() = TestPersonDetail(
     this.id,
     this.testPersonId,
     this.exerciseName,
     this.minutes,
-    this.repetitions,
-    this.repByMin
+    this.repetitions
 )
 
 fun TestPersonDetail.toDto() = TestPersonDetailDTO(
@@ -28,6 +28,5 @@ fun TestPersonDetail.toDto() = TestPersonDetailDTO(
     this.testPersonId,
     this.exerciseName,
     this.minutes,
-    this.repetitions,
-    this.repByMin
+    this.repetitions
 )

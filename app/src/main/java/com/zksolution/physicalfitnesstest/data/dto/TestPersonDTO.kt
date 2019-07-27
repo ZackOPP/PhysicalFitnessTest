@@ -9,7 +9,7 @@ data class TestPersonDTO(
     @PrimaryKey(autoGenerate = true) val id: Int,
     val testId: Int,
     val personId: Int,
-    val result: Int
+    val result: Double
 )
 
 fun List<TestPersonDTO>.toDomain() = this.map { it.toDomain() }

@@ -8,6 +8,7 @@ import com.zksolution.physicalfitnesstest.presentation.testdetail.TestDetailView
 import com.zksolution.physicalfitnesstest.presentation.testlist.TestListViewModel
 import com.zksolution.physicalfitnesstest.presentation.testpersondetail.TestPersonDetailViewModel
 import com.zksolution.physicalfitnesstest.presentation.testpersonjogging.TestPersonJoggingViewModel
+import com.zksolution.physicalfitnesstest.presentation.testresult.TestResultViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -45,6 +46,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(TestPersonDetailViewModel::class)
     abstract fun bindTestPersonDetailViewModel(testPersonDetailViewModel: TestPersonDetailViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(TestResultViewModel::class)
+    abstract fun bindTestResultViewModel(testResultViewModel: TestResultViewModel): ViewModel
 
     @Binds
     abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory

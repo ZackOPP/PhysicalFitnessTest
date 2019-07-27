@@ -1,10 +1,8 @@
 package com.zksolution.physicalfitnesstest.data.db.dao
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.zksolution.physicalfitnesstest.data.dto.TestPersonDTO
+import io.reactivex.Completable
 import io.reactivex.Flowable
 import io.reactivex.Single
 
@@ -16,4 +14,7 @@ interface TestPersonDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(testPersonDTO: TestPersonDTO): Single<Long>
+
+    @Update
+    fun update(testPersonDTO: TestPersonDTO): Completable
 }

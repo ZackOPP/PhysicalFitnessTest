@@ -2,6 +2,7 @@
 <layout>
 <data>
 
+    <variable name="viewModel" type="com.zksolution.physicalfitnesstest.presentation.testresult.TestResultViewModel"/>
 
 </data>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -17,6 +18,7 @@
             android:layout_height="@dimen/progress_bar_size"
             android:layout_gravity="center"
             android:max="100"
+            android:progress="@{viewModel.resultInt}"
             tools:progress="90"
             android:indeterminate="false"/>
 
@@ -24,9 +26,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/colorDarkGray"
-            tools:text="90%"/>
+            android:text="@{viewModel.result}"
+            tools:text="90.99%"/>
 
     <FrameLayout
             android:layout_width="match_parent"

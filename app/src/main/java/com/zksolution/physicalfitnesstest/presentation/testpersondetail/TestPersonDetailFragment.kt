@@ -22,6 +22,7 @@ class TestPersonDetailFragment : BaseViewModelFragment<TestPersonDetailViewModel
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_exercise_form, container, false)
+        binding.lifecycleOwner = viewLifecycleOwner
         return binding.root
     }
 
@@ -29,7 +30,7 @@ class TestPersonDetailFragment : BaseViewModelFragment<TestPersonDetailViewModel
         super.onViewCreated(view, savedInstanceState)
         val safeArgs =  TestPersonDetailFragmentArgs.fromBundle(arguments!!)
         viewModel.loadTestData(safeArgs.testPerson, safeArgs.exercise)
-        binding.testPersonDetail = viewModel.testPersonDetail
+        binding.viewModel = viewModel
         viewModel.loadNextExercise()
         view_button_next_question_btn.setOnClickListener {
             viewModel.save()
@@ -48,6 +49,6 @@ class TestPersonDetailFragment : BaseViewModelFragment<TestPersonDetailViewModel
 
     private fun navigateToTestResult() =
         findNavController().navigate(
-            TestPersonDetailFragmentDirections.finishDest()
+            TestPersonDetailFragmentDirections.finishDest(viewModel.testPerson)
         )
 }

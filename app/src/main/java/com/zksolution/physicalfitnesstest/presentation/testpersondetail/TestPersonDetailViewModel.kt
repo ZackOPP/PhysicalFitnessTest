@@ -1,5 +1,7 @@
 package com.zksolution.physicalfitnesstest.presentation.testpersondetail
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.zksolution.physicalfitnesstest.domain.model.*
 import com.zksolution.physicalfitnesstest.domain.usecase.GetNextExerciseUseCase
 import com.zksolution.physicalfitnesstest.domain.usecase.SaveTestPersonDetailUseCase
@@ -13,11 +15,14 @@ class TestPersonDetailViewModel @Inject constructor(
     private val saveTestPersonDetailUseCase: SaveTestPersonDetailUseCase
 ) : RxViewModel() {
 
-    lateinit var currentExercise: Exercise
     lateinit var testPersonDetail: TestPersonDetail
+    private lateinit var currentExercise: Exercise
 
     var nextExercise: Exercise? = null
     lateinit var testPerson: TestPerson
+
+    private val _repetitionsByMinute = MutableLiveData<String>()
+    val repetitionsByMinute: LiveData<String> = _repetitionsByMinute
 
     fun loadTestData(tp: TestPerson, e: Exercise) {
         if (!::testPersonDetail.isInitialized) {
@@ -48,4 +53,13 @@ class TestPersonDetailViewModel @Inject constructor(
 
             })
         )
+
+    fun onDetailsChanged() =
+        with (testPersonDetail) {
+            _repetitionsByMinute.value = if (repetitions.isNotEmpty() && minutes.isNotEmpty()) {
+                (repetitions.toDouble() / minutes.toDouble()).toString()
+            } else {
+                "0"
+            }
+        }
 }
